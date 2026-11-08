@@ -4,7 +4,7 @@ Dashboard que acompanha a variação de moedas estrangeiras em relação ao Real
 ao longo do último mês, com comparação entre moedas e tabela de conversão,
 usando dados reais da BrasilAPI.
 
-🔗 **Deploy:** [https://cotacao-moedas-kvjz.vercel.app](https://cotacao-moedas-kvjz.vercel.app)
+🔗 **Deploy:** _adicione aqui o link da Vercel_
 
 ---
 
@@ -59,3 +59,19 @@ npm start
 ```
 
 ## Estrutura do projeto
+
+├─ app/
+│ ├─ api/cotacao/route.ts # endpoint que serve o histórico de cotações
+│ ├─ layout.tsx
+│ ├─ page.tsx # busca os dados iniciais no servidor
+│ └─ globals.css
+├─ components/
+│ └─ ChartSection.tsx # gráfico, seletor de moedas e tabela
+├─ lib/
+│ └─ brasilapi.ts # funções de busca e cache na BrasilAPI
+
+
+## Fonte de dados
+
+[BrasilAPI — Câmbio](https://brasilapi.com.br/docs#tag/CAMBIO), API pública
+e gratuita mantida pela comunidade.
