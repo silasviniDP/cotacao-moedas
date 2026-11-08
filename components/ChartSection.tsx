@@ -95,7 +95,7 @@ export default function ChartSection({
               tick={{ fontSize: 12 }}
               tickFormatter={(v) => `R$ ${Number(v).toFixed(2)}`}
             />
-            <Tooltip formatter={(v) => `R$ ${Number(v).toFixed(4)}`} />
+            <Tooltip formatter={(v) => `R$ ${Number(v).toFixed(2)}`} />
             <Legend />
             {selecionadas.map((simbolo, i) => (
               <Line
@@ -133,7 +133,7 @@ export default function ChartSection({
                   <td className="py-2">{simbolo}</td>
                   <td className="text-right py-2">
                     {valorVenda
-                      ? inverterParaReal(valorVenda).toFixed(4)
+                      ? inverterParaReal(valorVenda).toFixed(2)
                       : "—"}
                   </td>
                 </tr>
