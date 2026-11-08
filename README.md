@@ -40,24 +40,6 @@ Principais decisões técnicas:
 - Tabela de conversão (R$ 1 → valor na moeda selecionada), sincronizada com o gráfico
 - Cache no servidor para não sobrecarregar a API a cada visita
 
-## Como rodar localmente
-
-Pré-requisito: [Node.js](https://nodejs.org/) instalado (versão 18 ou superior).
-
-```bash
-npm install
-npm run dev
-```
-
-Acesse [http://localhost:3000](http://localhost:3000).
-
-## Build de produção
-
-```bash
-npm run build
-npm start
-```
-
 ## Estrutura do projeto
 
 ├─ app/
