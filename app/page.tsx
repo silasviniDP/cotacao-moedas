@@ -1,9 +1,12 @@
+import { connection } from "next/server";
 import { getMoedas, getHistoricoComparado } from "@/lib/brasilapi";
 import ChartSection from "@/components/ChartSection";
 
 export const instant = false;
 
 export default async function Home() {
+  await connection();
+
   const moedas = await getMoedas();
   const historicoInicial = await getHistoricoComparado(["USD"]);
 
