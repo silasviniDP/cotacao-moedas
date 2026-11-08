@@ -4,7 +4,7 @@ Dashboard que acompanha a variação de moedas estrangeiras em relação ao Real
 ao longo do último mês, com comparação entre moedas e tabela de conversão,
 usando dados reais da BrasilAPI.
 
-🔗 **Deploy:** _adicione aqui o link da Vercel_
+🔗 **Deploy:** [https://cotacao-moedas-kvjz.vercel.app](https://cotacao-moedas-kvjz.vercel.app)
 
 ---
 
