@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cotação de Moedas
 
-## Getting Started
+Dashboard que acompanha a variação de moedas estrangeiras em relação ao Real
+ao longo do último mês, com comparação entre moedas e tabela de conversão,
+usando dados reais da BrasilAPI.
 
-First, run the development server:
+🔗 **Deploy:** [https://cotacao-moedas-kvjz.vercel.app](https://cotacao-moedas-kvjz.vercel.app)
+
+---
+
+## Sobre o projeto
+
+Projeto construído pra praticar consumo de API externa, cache no servidor e
+visualização de dados em gráfico — indo além do básico de só exibir um JSON
+na tela.
+
+Principais decisões técnicas:
+- A BrasilAPI só retorna a cotação de **um dia por vez**, então o histórico
+  mensal é montado buscando os últimos ~22 dias úteis em paralelo e
+  cacheando o resultado no servidor.
+- A tabela de conversão reaproveita os mesmos dados já buscados para o
+  gráfico (sem chamadas extras à API), então atualiza em conjunto.
+
+## Tecnologias
+
+| Camada       | Tecnologia                          |
+|--------------|--------------------------------------|
+| Framework    | [Next.js](https://nextjs.org/) (App Router) |
+| Biblioteca   | [React](https://react.dev/)          |
+| Linguagem    | [TypeScript](https://www.typescriptlang.org/) |
+| Estilização  | [Tailwind CSS](https://tailwindcss.com/) |
+| Gráficos     | [Recharts](https://recharts.org/)    |
+| Dados        | [BrasilAPI](https://brasilapi.com.br/) (câmbio) |
+| Deploy       | [Vercel](https://vercel.com/)        |
+
+## Funcionalidades
+
+- Gráfico de linha com a variação de uma moeda ao longo do último mês
+- Comparação simultânea entre até 4 moedas no mesmo gráfico
+- Tabela de conversão (R$ 1 → valor na moeda selecionada), sincronizada com o gráfico
+- Cache no servidor para não sobrecarregar a API a cada visita
+
+## Como rodar localmente
+
+Pré-requisito: [Node.js](https://nodejs.org/) instalado (versão 18 ou superior).
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de produção
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Estrutura do projeto
